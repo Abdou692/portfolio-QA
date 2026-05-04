@@ -322,114 +322,6 @@
       color: var(--primary);
     }
 
-    .capture-card {
-      background: white;
-      border-radius: 26px;
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
-      border: 1px solid #dbeafe;
-      transition: 0.28s ease;
-      height: 100%;
-    }
-
-    .capture-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.14);
-    }
-
-    .capture-header {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      padding: 18px 22px;
-    }
-
-    .capture-header h5 {
-      margin: 0;
-      font-weight: 800;
-      font-size: 1.08rem;
-    }
-
-    .capture-image-wrapper {
-      background: #f8fafc;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-top: 1px solid #e5e7eb;
-    }
-
-    .capture-image-wrapper img {
-      width: 100%;
-      height: auto;
-      max-height: 600px;
-      object-fit: contain;
-      background: white;
-      border-radius: 18px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
-    }
-
-    .capture-body {
-      padding: 22px;
-    }
-
-    .capture-body p {
-      color: var(--muted);
-      margin-bottom: 0;
-    }
-
-    .capture-tag {
-      display: inline-block;
-      background: #ccfbf1;
-      color: var(--primary-dark);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: 0.78rem;
-      margin-bottom: 12px;
-    }
-
-
-    .capture-card {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  overflow: hidden;
-}
-
-.capture-header {
-  background: #0f766e;
-  color: white;
-  padding: 15px 20px;
-}
-
-.capture-body {
-  padding: 15px 20px;
-}
-
-.capture-tag {
-  background: #ccfbf1;
-  color: #115e59;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.capture-image-wrapper {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.capture-image-wrapper img {
-  width: 100%;
-  max-height: 420px;
-  object-fit: contain;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-}
-
     pre {
       background: #0f172a;
       color: #e5e7eb;
@@ -529,8 +421,8 @@
           <li class="nav-item"><a class="nav-link" href="#strategie">Stratégie</a></li>
           <li class="nav-item"><a class="nav-link" href="#tests">Cas de test</a></li>
           <li class="nav-item"><a class="nav-link" href="#bugs">Bugs</a></li>
-          <li class="nav-item"><a class="nav-link" href="#captures">Captures</a></li>
           <li class="nav-item"><a class="nav-link" href="#automation">Automatisation</a></li>
+          <li class="nav-item"><a class="nav-link" href="#captures">Captures</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -551,7 +443,7 @@
           </p>
           <div class="mt-4 d-flex flex-wrap gap-3">
             <a href="#tests" class="btn btn-main">Voir les cas de test</a>
-            <a href="#automation" class="btn btn-outline-main">Voir scripts d’automatisation</a>
+            <a href="#automation" class="btn btn-outline-main">Voir l’automatisation</a>
           </div>
         </div>
 
@@ -640,17 +532,14 @@
       </div>
 
       <div class="mt-5">
-  <h4 class="fw-bold mb-3">Modules couverts</h4>
-
-  <span class="badge-tech">Login / Authentification</span>
-  <span class="badge-tech">Accounts Overview</span>
-  <span class="badge-tech">Account Details</span>
-  <span class="badge-tech">Open New Account</span>
-  <span class="badge-tech">Bill Pay</span>
-  <span class="badge-tech">Transactions</span>
-  <span class="badge-tech">Logout / Sécurité</span>
-
-</div>
+        <h4 class="fw-bold mb-3">Modules couverts</h4>
+        <span class="badge-tech">Accounts Overview</span>
+        <span class="badge-tech">Open New Account</span>
+        <span class="badge-tech">Account Details</span>
+        <span class="badge-tech">Bill Pay</span>
+        <span class="badge-tech">Transactions</span>
+        <span class="badge-tech">Logout / Sécurité</span>
+      </div>
     </div>
   </section>
 
@@ -853,166 +742,6 @@
     </div>
   </section>
 
-
-<!-- CAPTURES -->
-<section id="captures">
-  <div class="container">
-    <p class="section-kicker">Preuves QA</p>
-    <h2 class="section-title">Captures Jira / Xray</h2>
-    <p class="section-subtitle">
-      Ces captures montrent les livrables du projet : organisation Jira, plan de test,
-      exécution Xray, anomalies, user stories et cas de test détaillés.
-    </p>
-
-    <div class="row g-5">
-
-      <!-- 1 -->
-      <div class="col-12">
-        <div class="capture-card">
-          <div class="capture-header">
-            <h5><i class="bi bi-kanban me-2"></i>Vue globale Jira</h5>
-          </div>
-          <div class="capture-body">
-            <span class="capture-tag">Organisation projet</span>
-            <p>Vue du tableau Jira avec les tickets organisés par module, statut et epic.</p>
-          </div>
-          <div class="capture-image-wrapper">
-            <img src="images/jira-board.png" alt="Board Jira">
-          </div>
-        </div>
-      </div>
-
-      <!-- 2 -->
-      <div class="col-12">
-        <div class="capture-card">
-          <div class="capture-header">
-            <h5><i class="bi bi-clipboard-data me-2"></i>Plan de test Comptes</h5>
-          </div>
-          <div class="capture-body">
-            <span class="capture-tag">Stratégie</span>
-            <p>Objectifs, périmètre et critères de sortie.</p>
-          </div>
-
-          <div class="capture-image-wrapper">
-            <div class="row g-3 w-100">
-              <div class="col-md-6">
-                <img src="images/test-plan-comptes.png" class="img-fluid rounded w-100">
-              </div>
-              <div class="col-md-6">
-                <img src="images/Listetest-plan-comptes.png" class="img-fluid rounded w-100">
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- 3 -->
-      <div class="col-12">
-        <div class="capture-card">
-          <div class="capture-header">
-            <h5><i class="bi bi-play-circle me-2"></i>Exécution des tests</h5>
-          </div>
-          <div class="capture-body">
-            <span class="capture-tag">Xray</span>
-            <p>Résultats des tests avec statuts PASS / FAIL.</p>
-          </div>
-
-          <div class="capture-image-wrapper">
-            <div class="row g-3 w-100">
-              <div class="col-md-6">
-                <img src="images/test-execution-paiements.png" class="img-fluid rounded w-100">
-              </div>
-              <div class="col-md-6">
-                <img src="images/Satuttest-execution-paiements.png" class="img-fluid rounded w-100">
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- 4 -->
-      <div class="capture-image-wrapper">
-  <div class="row g-3 w-100">
-
-    <div class="col-md-6">
-      <img src="images/bug-compte-solde-insuffisant.png"
-           class="img-fluid rounded w-100"
-           alt="Bug solde insuffisant">
-    </div>
-
-    <div class="col-md-6">
-      <img src="images/Suitebug-compte-solde-insuffisant.png"
-           class="img-fluid rounded w-100"
-           alt="Suite bug solde insuffisant">
-    </div>
-
-  </div>
-</div>
-
-      <!-- 5 -->
-      <div class="col-12">
-        <div class="capture-card">
-          <div class="capture-header">
-            <h5><i class="bi bi-file-earmark-text me-2"></i>User Story</h5>
-          </div>
-          <div class="capture-body">
-            <span class="capture-tag">Traçabilité</span>
-            <p>Exigence liée aux tests.</p>
-          </div>
-          <div class="capture-image-wrapper">
-            <img src="images/story-paiement-validite-montant.png">
-          </div>
-        </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="col-12">
-  <div class="capture-card">
-
-    <div class="capture-header">
-      <h5><i class="bi bi-list-check me-2"></i>Cas de test</h5>
-    </div>
-
-    <div class="capture-body">
-      <span class="capture-tag">Conception</span>
-      <p>Données, étapes et résultat attendu.</p>
-    </div>
-
-    <!-- IMAGE PRINCIPALE -->
-    <div class="capture-image-wrapper">
-      <img src="images/test-case-paiement-montant-vide.png"
-           class="img-fluid rounded"
-           alt="Cas de test">
-    </div>
-
-    <!-- LES 2 IMAGES BIEN ALIGNÉES -->
-    <div class="capture-image-wrapper">
-      <div class="row g-3 w-100">
-
-        <div class="col-md-6">
-          <img src="images/Suite-cas-de-tests-paiement.png"
-               class="img-fluid rounded w-100"
-               alt="Suite test 1">
-        </div>
-
-        <div class="col-md-6">
-          <img src="images/Suitebis-cas-de-tests-paiement.png"
-               class="img-fluid rounded w-100"
-               alt="Suite test 2">
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</div>
-
-    </div>
-  </div>
-</section>
-
   <!-- AUTOMATION -->
   <section id="automation">
     <div class="container">
@@ -1085,11 +814,78 @@ def test_login_parabank():
       <span class="badge-tech">Git</span>
       <span class="badge-tech">GitHub</span>
       <span class="badge-tech">VS Code</span>
+      <span class="badge-tech">Bootstrap</span>
       <span class="badge-tech">Chrome DevTools</span>
     </div>
   </section>
 
-  
+  <!-- CAPTURES -->
+  <section id="captures">
+    <div class="container">
+      <p class="section-kicker">Preuves QA</p>
+      <h2 class="section-title">Captures Jira / Xray</h2>
+      <p class="section-subtitle">
+        Ces captures illustrent l’organisation du projet, la traçabilité entre user stories et tests,
+        l’exécution des campagnes et la gestion des anomalies.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card card-custom p-3">
+            <img src="images/jira-board.png" class="img-fluid rounded" alt="Board Jira ParaBank">
+            <h5 class="fw-bold mt-3">Vue globale Jira</h5>
+            <p>Organisation des tickets par module, statut et epic.</p>
+          </div>
+        </div>
+
+        
+        <div class="col-lg-6">
+          <div class="card card-custom p-3">
+            <img src="images/story-ouvrir-nouveau-compte.png" class="img-fluid rounded" alt="User Story Compte">
+            <h5 class="fw-bold mt-3">User Story Compte</h5>
+            <p>Traçabilité entre exigence fonctionnelle et cas de test associés.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card card-custom p-3">
+            <img src="images/test-case-paiement-montant-vide.png" class="img-fluid rounded" alt="Cas de test paiement montant vide">
+            <h5 class="fw-bold mt-3">Cas de test détaillé</h5>
+            <p>Exemple de test avec action, données de test et résultat attendu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        
+        <div class="col-lg-6">
+          <div class="card card-custom p-3">
+            <img src="images/bug-compte-solde-insuffisant.png" class="img-fluid rounded" alt="Bug creation compte solde insuffisant">
+            <h5 class="fw-bold mt-3">Bug critique documenté</h5>
+            <p>Anomalie avec contexte, étapes de reproduction, résultat obtenu, résultat attendu et impact.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card card-custom p-3">
+            <img src="images/test-plan-comptes.png" class="img-fluid rounded" alt="Plan de test Comptes">
+            <img src="images/Listetest-plan-comptes.png" class="img-fluid rounded" alt="Liste TO DO Plan de test Comptes">
+            <h5 class="fw-bold mt-3">Plan de test fonctionnel Comptes</h5>
+            <p>Objectifs, périmètre, fonctionnalités couvertes et critères de sortie.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card card-custom p-3">
+            <img src="images/test-execution-paiements.png" class="img-fluid rounded" alt="Exécution des tests Paiements">
+            <img src="images/Satuttest-execution-paiements.png" class="img-fluid rounded" alt="Satut Exécution des tests Paiements">
+            <h5 class="fw-bold mt-3">Exécution des tests</h5>
+            <p>Suivi des résultats avec tests passés et échoués.</p>
+          </div>
+        </div>
+
+
+  </section>
 
   <!-- CONTACT -->
   <footer id="contact" class="footer">
