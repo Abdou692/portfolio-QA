@@ -111,6 +111,7 @@ body {
   backdrop-filter: blur(10px);
 }
 
+
 /* BUTTONS */
 .btn-main {
   background: var(--secondary);
@@ -137,6 +138,11 @@ body {
 .btn-outline-main:hover {
   background: white;
   color: var(--primary-dark);
+}
+
+.project-highlight {
+  color: var(--secondary);
+  font-weight: 700;
 }
 
 /* SECTIONS */
