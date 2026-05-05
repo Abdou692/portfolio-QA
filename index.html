@@ -6,558 +6,19 @@
   <title>Portfolio QA - Projet ParaBank</title>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-  <style>
-    :root {
-      --primary: #0f766e;
-      --primary-dark: #115e59;
-      --secondary: #f59e0b;
-      --dark: #0f172a;
-      --text: #1f2937;
-      --muted: #64748b;
-      --bg-light: #f8fafc;
-      --bg-soft: #ecfdf5;
-      --card-shadow: 0 14px 35px rgba(15, 23, 42, 0.09);
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: var(--bg-light);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    .navbar {
-      background: rgba(15, 23, 42, 0.96) !important;
-      padding: 16px 0;
-      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
-    }
-
-    .navbar-brand {
-      font-size: 1.25rem;
-      letter-spacing: 0.3px;
-    }
-
-    .nav-link {
-      color: #e5e7eb !important;
-      margin-left: 12px;
-      font-weight: 500;
-    }
-
-    .nav-link:hover,
-    .nav-link.active {
-      color: var(--secondary) !important;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #0f766e, #134e4a, #0f172a);
-      color: white;
-      padding: 155px 0 115px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 430px;
-      height: 430px;
-      background: rgba(245, 158, 11, 0.18);
-      border-radius: 50%;
-      top: -160px;
-      right: -120px;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 50%;
-      bottom: -130px;
-      left: -80px;
-    }
-
-    .hero .container {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.14);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: 9px 16px;
-      border-radius: 999px;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    .hero h1 {
-      font-size: 3.4rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.14rem;
-      max-width: 880px;
-      opacity: 0.96;
-    }
-
-    .hero-card {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 24px;
-      padding: 26px;
-      backdrop-filter: blur(10px);
-    }
-
-    .btn-main {
-      background: var(--secondary);
-      color: #111827;
-      border: none;
-      border-radius: 999px;
-      padding: 12px 25px;
-      font-weight: 700;
-    }
-
-    .btn-main:hover {
-      background: #fbbf24;
-      color: #111827;
-    }
-
-    .btn-outline-main {
-      border: 1px solid rgba(255, 255, 255, 0.65);
-      color: white;
-      border-radius: 999px;
-      padding: 12px 25px;
-      font-weight: 700;
-    }
-
-    .btn-outline-main:hover {
-      background: white;
-      color: var(--primary-dark);
-    }
-
-    section {
-      padding: 115px 0;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    section:nth-of-type(even) {
-      background: #ffffff;
-    }
-
-    section:nth-of-type(odd) {
-      background: #f1f8f6;
-    }
-
-    .section-kicker {
-      color: var(--secondary);
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-size: 0.82rem;
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      color: var(--primary-dark);
-      font-size: 2.25rem;
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 5px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      margin-top: 12px;
-      border-radius: 999px;
-    }
-
-    .section-subtitle {
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 850px;
-      margin-bottom: 45px;
-    }
-
-    .card-custom {
-      border: none;
-      border-radius: 24px;
-      background: white;
-      box-shadow: var(--card-shadow);
-      transition: 0.28s ease;
-      height: 100%;
-    }
-
-    .card-custom:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.14);
-    }
-
-    .icon-box {
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
-      background: var(--bg-soft);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      margin-bottom: 18px;
-    }
-
-    .stat-card {
-      background: white;
-      color: var(--dark);
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: var(--card-shadow);
-      height: 100%;
-    }
-
-    .stat-card h3 {
-      color: var(--primary);
-      font-size: 2.25rem;
-      font-weight: 800;
-      margin-bottom: 4px;
-    }
-
-    .badge-tech {
-      background: #ccfbf1;
-      color: #115e59;
-      padding: 10px 16px;
-      border-radius: 999px;
-      margin: 6px;
-      display: inline-block;
-      font-weight: 700;
-      font-size: 0.92rem;
-    }
-
-    .timeline-item {
-      border-left: 5px solid var(--primary);
-      padding: 8px 0 8px 22px;
-      margin-bottom: 26px;
-    }
-
-    .timeline-item h5 {
-      color: var(--primary-dark);
-      font-weight: 800;
-    }
-
-    .table-wrapper {
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
-      background: white;
-    }
-
-    .table {
-      margin-bottom: 0;
-    }
-
-    .table thead {
-      background: var(--primary-dark);
-      color: white;
-    }
-
-    .filter-btn {
-      border-radius: 999px;
-      margin: 4px;
-      font-weight: 700;
-      border-color: var(--primary);
-      color: var(--primary-dark);
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
-
-    .bug-card {
-      border-left: 7px solid #dc2626;
-      background: #fff7ed;
-    }
-
-    .risk-card {
-      border-left: 7px solid var(--secondary);
-    }
-
-    .screenshot-box {
-      background: white;
-      border: 2px dashed #99f6e4;
-      border-radius: 24px;
-      padding: 48px 25px;
-      min-height: 230px;
-      text-align: center;
-      color: var(--muted);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
-      transition: 0.25s ease;
-    }
-
-    .screenshot-box:hover {
-      border-color: var(--primary);
-      transform: scale(1.015);
-    }
-
-    .screenshot-box i {
-      color: var(--primary);
-    }
-
-    .capture-card {
-      background: white;
-      border-radius: 26px;
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
-      border: 1px solid #dbeafe;
-      transition: 0.28s ease;
-      height: 100%;
-    }
-
-    .capture-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.14);
-    }
-
-    .capture-header {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      padding: 18px 22px;
-    }
-
-    .capture-header h5 {
-      margin: 0;
-      font-weight: 800;
-      font-size: 1.08rem;
-    }
-
-    .capture-image-wrapper {
-      background: #f8fafc;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-top: 1px solid #e5e7eb;
-    }
-
-    .capture-image-wrapper img {
-      width: 100%;
-      height: auto;
-      max-height: 600px;
-      object-fit: contain;
-      background: white;
-      border-radius: 18px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
-    }
-
-    .capture-body {
-      padding: 22px;
-    }
-
-    .capture-body p {
-      color: var(--muted);
-      margin-bottom: 0;
-    }
-
-    .capture-tag {
-      display: inline-block;
-      background: #ccfbf1;
-      color: var(--primary-dark);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: 0.78rem;
-      margin-bottom: 12px;
-    }
-
-
-    .capture-card {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  overflow: hidden;
-}
-
-.capture-header {
-  background: #0f766e;
-  color: white;
-  padding: 15px 20px;
-}
-
-.capture-body {
-  padding: 15px 20px;
-}
-
-.capture-tag {
-  background: #ccfbf1;
-  color: #115e59;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.capture-image-wrapper {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-
-.capture-duo img {
-  width: 100%;
-  height: 360px;
-  object-fit: contain;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 8px;
-}
-
-.capture-image-wrapper img {
-  width: 100%;
-  max-height: 420px;
-  object-fit: contain;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-}
-
-    pre {
-      background: #0f172a;
-      color: #e5e7eb;
-      padding: 28px;
-      border-radius: 22px;
-      box-shadow: 0 15px 38px rgba(15, 23, 42, 0.22);
-      overflow-x: auto;
-      font-size: 0.9rem;
-    }
-
-    code {
-      color: #67e8f9;
-    }
-  
-    .automation-title {
-  color: var(--primary-dark);
-}
-
-.automation-title i {
-  color: var(--secondary);
-}
-
-.automation-subtitle-strong {
-  color: var(--primary-dark);
-}
-
-.automation-subtitle-strong i {
-  color: var(--secondary);
-}
-
-.code-title {
-  color: var(--primary-dark);
-}
-
-.code-title i {
-  color: var(--secondary);
-}
-
-.highlight-card {
-  border-left: 6px solid var(--primary);
-  background: #f0fdfa;
-}
-
-.highlight-card i {
-  color: var(--secondary);
-}
-
-.icon-box i {
-  color: var(--primary);
-}
-
-    .footer {
-      background: linear-gradient(135deg, #0f172a, #134e4a);
-      color: white;
-      padding: 85px 0;
-      font-size: 1.06rem;
-    }
-
-    .footer h4 {
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
-
-    .footer p {
-      opacity: 0.9;
-      margin-bottom: 8px;
-    }
-
-    .footer a {
-      color: #fbbf24;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .footer a:hover {
-      color: white;
-    }
-
-    @media (max-width: 991px) {
-      .hero {
-        padding: 135px 0 90px;
-      }
-
-      .hero h1 {
-        font-size: 2.45rem;
-      }
-
-      .hero-card {
-        margin-top: 35px;
-      }
-
-      section {
-        padding: 85px 0;
-      }
-
-      .nav-link {
-        margin-left: 0;
-        padding: 10px 0;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .hero h1 {
-        font-size: 2.05rem;
-      }
-
-      .section-title {
-        font-size: 1.8rem;
-      }
-
-      .hero p,
-      .section-subtitle {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <!-- CSS personnalisé -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
+<button id="scrollTopBtn">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
 <body>
 
   <!-- NAVBAR -->
@@ -567,7 +28,8 @@
         <i class="bi bi-shield-check me-2"></i>Portfolio QA
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Ouvrir le menu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Ouvrir le menu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -579,6 +41,7 @@
           <li class="nav-item"><a class="nav-link" href="#bugs">Bugs</a></li>
           <li class="nav-item"><a class="nav-link" href="#captures">Captures</a></li>
           <li class="nav-item"><a class="nav-link" href="#automation">Automatisation</a></li>
+          <li class="nav-item"><a class="nav-link" href="#outils">Outils</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -597,66 +60,60 @@
             Il met en avant l’analyse fonctionnelle, la stratégie de tests, les scénarios Jira/Xray,
             l’exécution des tests, la remontée des anomalies et l’automatisation avec Selenium, Python et Behave.
           </p>
-         <div class="mt-4 d-flex flex-wrap gap-3">
 
-             <!-- bouton principal -->
-         <div class="mt-4 d-flex flex-column flex-md-row gap-3">
+          <div class="mt-4 d-flex flex-column flex-md-row gap-3">
+            <a href="#tests" class="btn btn-main text-nowrap">
+              <i class="bi bi-list-check me-2"></i>Voir cas de test (extraits)
+            </a>
 
-  <a href="#tests" class="btn btn-main">
-    <i class="bi bi-list-check me-2"></i>Voir des cas de test (extraits du projet)
-  </a>
-
-  <a href="#captures" class="btn btn-outline-main">
-    <i class="bi bi-kanban me-2"></i>Voir le projet Jira / Xray
-  </a>
-
-</div>
-
-   </div>
-
+            <a href="#captures" class="btn btn-outline-main text-nowrap">
+              <i class="bi bi-kanban me-2"></i>Voir le projet Jira / Xray
+            </a>
+          </div>
         </div>
 
         <div class="col-lg-5">
-  <div class="hero-card">
-    <h4 class="fw-bold mb-4">Synthèse du projet</h4>
-    <div class="row g-3">
-      
-      <div class="col-6">
-        <div class="stat-card text-center">
-          <h3>70</h3>
-          <p class="mb-0">Cas de test</p>
+          <div class="hero-card">
+            <h4 class="fw-bold mb-4">Synthèse du projet</h4>
+
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="stat-card text-center">
+                  <h3>70</h3>
+                  <p class="mb-0">Cas de test</p>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="stat-card text-center">
+                  <h3>14</h3>
+                  <p class="mb-0">Bugs critiques</p>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="stat-card text-center">
+                  <h3>30</h3>
+                  <p class="mb-0">Tests automatisés</p>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="stat-card text-center">
+                  <h3>6</h3>
+                  <p class="mb-0">Modules clés</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="mt-4 mb-0">
+              Modules principaux : Utilisateurs, Comptes, Transferts, Paiement de factures,
+              Demande de prêt, Recherche de transactions.
+            </p>
+          </div>
         </div>
       </div>
-
-      <div class="col-6">
-        <div class="stat-card text-center">
-          <h3>14</h3>
-          <p class="mb-0">Bugs critiques</p>
-        </div>
-      </div>
-
-      <div class="col-6">
-        <div class="stat-card text-center">
-          <h3>30</h3>
-          <p class="mb-0">Tests automatisés</p>
-        </div>
-      </div>
-
-      <div class="col-6">
-        <div class="stat-card text-center">
-          <h3>6</h3>
-          <p class="mb-0">Modules clés</p>
-        </div>
-      </div>
-
     </div>
-
-    <p class="mt-4 mb-0">
-      Modules principaux : Utilisateurs, Comptes, Transferts, Paiement de factures, Demande de prêt, Recherche de transactions.
-    </p>
-
-  </div>
-</div>
   </header>
 
   <!-- PROJET -->
@@ -706,17 +163,16 @@
       </div>
 
       <div class="mt-5">
-  <h4 class="fw-bold mb-3">Modules couverts</h4>
+        <h4 class="fw-bold mb-3">Modules couverts</h4>
 
-  <span class="badge-tech">Login / Authentification</span>
-  <span class="badge-tech">Accounts Overview</span>
-  <span class="badge-tech">Account Details</span>
-  <span class="badge-tech">Open New Account</span>
-  <span class="badge-tech">Bill Pay</span>
-  <span class="badge-tech">Transactions</span>
-  <span class="badge-tech">Logout / Sécurité</span>
-
-</div>
+        <span class="badge-tech">Login / Authentification</span>
+        <span class="badge-tech">Accounts Overview</span>
+        <span class="badge-tech">Account Details</span>
+        <span class="badge-tech">Open New Account</span>
+        <span class="badge-tech">Bill Pay</span>
+        <span class="badge-tech">Transactions</span>
+        <span class="badge-tech">Logout / Sécurité</span>
+      </div>
     </div>
   </section>
 
@@ -760,10 +216,14 @@
       </div>
 
       <div class="mt-5">
-        <div class="timeline-item">
-          <h5>1. Analyse fonctionnelle</h5>
-          <p>Identification des fonctionnalités principales, des règles métier et des dépendances entre les modules.</p>
-        </div>
+  <h4 class="fw-bold mb-4 timeline-title highlight-title">
+  <i class="bi bi-diagram-3 me-2"></i>Démarche QA suivie
+  </h4>
+
+  <div class="timeline-item">
+    <h5>1. Analyse fonctionnelle</h5>
+    <p>Identification des fonctionnalités principales, des règles métier et des dépendances entre les modules.</p>
+  </div>
         <div class="timeline-item">
           <h5>2. Conception des cas de test</h5>
           <p>Rédaction des cas de test avec prérequis, données de test, étapes, résultats attendus et priorité.</p>
@@ -790,7 +250,8 @@
       <p class="section-kicker">Exécution</p>
       <h2 class="section-title">Scénarios et cas de test</h2>
       <p class="section-subtitle">
-        Les cas de test sont organisés par module afin de faciliter la lecture, l’exécution et le suivi dans Jira/Xray.
+        Les cas présentés ci-dessous sont des extraits représentatifs du projet,
+        couvrant les scénarios critiques et les principaux risques identifiés.
       </p>
 
       <div class="mb-4">
@@ -919,296 +380,232 @@
     </div>
   </section>
 
-
-<!-- CAPTURES -->
-<section id="captures">
-  <div class="container">
-    <p class="section-kicker">Preuves QA</p>
-    <h2 class="section-title">Captures Jira / Xray</h2>
-    <p class="section-subtitle">
-      Ces captures montrent les livrables du projet : organisation Jira, plan de test,
-      exécution Xray, anomalies, user stories et cas de test détaillés.
-    </p>
-
-    <div class="row g-5">
-
-      <!-- 1 -->
-      <div class="col-12">
-        <div class="capture-card">
-          <div class="capture-header">
-            <h5><i class="bi bi-kanban me-2"></i>Vue globale Jira</h5>
-          </div>
-          <div class="capture-body">
-            <span class="capture-tag">Organisation projet</span>
-            <p><strong>Vue du tableau Jira avec les tickets organisés par epic, module et statut.</strong></p>
-          </div>
-          <div class="capture-image-wrapper">
-            <img src="images/jira-board.png" alt="Board Jira">
-          </div>
-        </div>
-      </div>
-
-      <!-- 2 -->
-<div class="col-12">
-  <div class="capture-card">
-
-    <div class="capture-header">
-      <h5><i class="bi bi-clipboard-data me-2"></i>Plan de test Comptes</h5>
-    </div>
-
-    <div class="capture-body">
-      <span class="capture-tag">Stratégie</span>
-      <p><strong>Objectifs, périmètre et critères de sortie.</strong></p>
-    </div>
-
-    <div class="capture-image-wrapper">
-      <div class="row g-3 w-100">
-
-        <div class="col-md-6 text-center">
-          <img src="images/test-plan-comptes.png"
-               class="img-fluid rounded w-100"
-               alt="Plan de test Comptes">
-
-          <p class="small mt-2">
-            Plan de test : périmètre, objectifs et stratégie
-          </p>
-        </div>
-
-        <div class="col-md-6 text-center">
-          <img src="images/Listetest-plan-comptes.png"
-               class="img-fluid rounded w-100"
-               alt="Liste tests Comptes">
-
-          <p class="small mt-2">
-            Liste des cas de test (Xray / TO DO)
-          </p>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</div>
-
-      <!-- 3 -->
-<div class="col-12">
-  <div class="capture-card">
-
-    <div class="capture-header">
-      <h5><i class="bi bi-play-circle me-2"></i>Exécution des tests</h5>
-    </div>
-
-    <div class="capture-body">
-      <span class="capture-tag">Xray</span>
-      <p><strong>Résultats des tests avec statuts PASS / FAIL.</strong></p>
-    </div>
-
-    <div class="capture-image-wrapper">
-      <div class="row g-3 w-100">
-
-        <div class="col-md-6 text-center">
-          <img src="images/test-execution-paiements.png"
-               class="img-fluid rounded w-100"
-               alt="Exécution tests paiements">
-
-          <p class="small mt-2">
-            Lancement des tests dans Xray
-          </p>
-        </div>
-
-        <div class="col-md-6 text-center">
-          <img src="images/Satuttest-execution-paiements.png"
-               class="img-fluid rounded w-100"
-               alt="Résultat tests paiements">
-
-          <p class="small mt-2">
-            Résultats des tests : PASS / FAIL
-          </p>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</div>
-
-   <!-- 4 -->
-<div class="col-12">
-  <div class="capture-card">
-
-    <div class="capture-header">
-      <h5><i class="bi bi-bug me-2"></i>Bug critique</h5>
-    </div>
-
-    <div class="capture-body">
-      <span class="capture-tag">Anomalie</span>
-      <p><strong>Bug détecté avec étapes de reproduction et impact métier.</strong></p>
-    </div>
-
-    <div class="capture-image-wrapper">
-      <div class="row g-3 w-100 capture-duo">
-
-        <div class="col-md-6">
-          <img src="images/bug-compte-solde-insuffisant.png"
-               alt="Bug solde insuffisant">
-          <p class="small text-center mt-2">Bug détecté</p>
-        </div>
-
-        <div class="col-md-6">
-          <img src="images/Suitebug-compte-solde-insuffisant.png"
-               alt="Suite bug solde insuffisant">
-          <p class="small text-center mt-2">Détails / reproduction</p>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</div>
-
-      <!-- 5 -->
-<div class="col-12">
-  <div class="capture-card">
-
-    <div class="capture-header">
-      <h5><i class="bi bi-file-earmark-text me-2"></i>User Story</h5>
-    </div>
-
-    <div class="capture-body">
-      <span class="capture-tag">Traçabilité</span>
-      <p><strong>User Story avec critères d’acceptation et lien vers les cas de test.</strong></p>
-    </div>
-
-    <div class="capture-image-wrapper text-center">
-      <img src="images/story-paiement-validite-montant.png"
-           class="img-fluid rounded"
-           alt="User Story paiement">
-    </div>
-
-  </div>
-</div>
-
-      <!-- 6 -->
-      <div class="col-12">
-  <div class="capture-card">
-
-    <div class="capture-header">
-      <h5><i class="bi bi-list-check me-2"></i>Cas de test</h5>
-    </div>
-
-    <div class="capture-body">
-      <span class="capture-tag">Conception</span>
-      <p><strong>Cas de test détaillé avec étapes et résultat attendu.</strong></p>
-    </div>
-
-    <!-- IMAGE PRINCIPALE -->
-    <div class="capture-image-wrapper">
-      <img src="images/test-case-paiement-montant-vide.png"
-           class="img-fluid rounded"
-           alt="Cas de test">
-    </div>
-
-    <!-- LES 2 IMAGES BIEN ALIGNÉES -->
-    <div class="capture-image-wrapper">
-  <div class="row g-3 w-100 capture-duo">
-
-    <div class="col-md-6">
-      <img src="images/Suite-cas-de-tests-paiement.png"
-           alt="Suite cas de test paiement">
-           <p class="small mt-2 text-center">
-            Étapes du test dans Xray
-          </p>
-      </div>
-
-    <div class="col-md-6">
-      <img src="images/Suitebis-cas-de-tests-paiement.png"
-           alt="Suite bis cas de test paiement">
-             <p class="small mt-2 text-center">
-            Résultat attendu et validation
-          </p>
-
-    </div>
-    
-
-  </div>
-</div>
-
-      </div>
-    </div>
-
-  </div>
-</div>
-
-    </div>
-  </div>
-</section>
-
- <!-- AUTOMATION -->
-<section id="automation">
-  <div class="container">
-
-    <p class="section-kicker">Automatisation</p>
-
-    <h2 class="section-title automation-title">
-      <i class="bi bi-cpu me-2"></i>Tests automatisés — Selenium, Python & Behave
-    </h2>
-
-    <p class="section-subtitle">
-      Automatisation de scénarios critiques avec une approche BDD.
-      Les tests couvrent des cas limites sur ParaBank : création de compte avec solde insuffisant,
-      paiement avec solde insuffisant, montant négatif, montant vide et contrôle des messages d’erreur.
-    </p>
-
-    <div class="row g-4 mb-5">
-      <div class="col-md-3">
-        <div class="card card-custom text-center p-4">
-          <div class="icon-box mx-auto"><i class="bi bi-filetype-py"></i></div>
-          <h6 class="fw-bold">Python</h6>
-          <p class="small mb-0">Steps automatisés</p>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card card-custom text-center p-4">
-          <div class="icon-box mx-auto"><i class="bi bi-browser-chrome"></i></div>
-          <h6 class="fw-bold">Selenium</h6>
-          <p class="small mb-0">Automatisation UI</p>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card card-custom text-center p-4">
-          <div class="icon-box mx-auto"><i class="bi bi-gear"></i></div>
-          <h6 class="fw-bold">Behave</h6>
-          <p class="small mb-0">Exécution BDD</p>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card card-custom text-center p-4">
-          <div class="icon-box mx-auto"><i class="bi bi-list-check"></i></div>
-          <h6 class="fw-bold">Gherkin</h6>
-          <p class="small mb-0">Scénarios lisibles</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card card-custom highlight-card p-4 mb-5">
-      <h4 class="fw-bold mb-3 automation-subtitle-strong">
-        <i class="bi bi-bullseye me-2"></i>Objectif de l’automatisation
-      </h4>
-      <p class="mb-0">
-        L’objectif est de transformer des scénarios métier en tests automatisés rejouables.
-        Les fichiers <strong>.feature</strong> décrivent le comportement attendu en langage naturel,
-        puis les steps Python exécutent les actions dans l’interface ParaBank avec Selenium.
+  <!-- CAPTURES -->
+  <section id="captures">
+    <div class="container">
+      <p class="section-kicker">Preuves QA</p>
+      <h2 class="section-title">Captures Jira / Xray</h2>
+      <p class="section-subtitle">
+        Ces captures montrent les livrables du projet : organisation Jira, plan de test,
+        exécution Xray, anomalies, user stories et cas de test détaillés.
       </p>
+
+      <div class="row g-5">
+
+        <div class="col-12">
+          <div class="capture-card">
+            <div class="capture-header">
+              <h5><i class="bi bi-kanban me-2"></i>Vue globale Jira</h5>
+            </div>
+            <div class="capture-body">
+              <span class="capture-tag">Organisation projet</span>
+              <p><strong>Vue du tableau Jira avec les tickets organisés par epic, module et statut.</strong></p>
+            </div>
+            <div class="capture-image-wrapper">
+              <img src="images/jira-board.png" alt="Board Jira">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="capture-card">
+            <div class="capture-header">
+              <h5><i class="bi bi-clipboard-data me-2"></i>Plan de test Comptes</h5>
+            </div>
+
+            <div class="capture-body">
+              <span class="capture-tag">Stratégie</span>
+              <p><strong>Objectifs, périmètre et critères de sortie.</strong></p>
+            </div>
+
+            <div class="capture-image-wrapper">
+              <div class="row g-3 w-100 capture-duo">
+                <div class="col-md-6 text-center">
+                  <img src="images/test-plan-comptes.png" alt="Plan de test Comptes">
+                  <p class="small mt-2">Plan de test : périmètre, objectifs et stratégie</p>
+                </div>
+
+                <div class="col-md-6 text-center">
+                  <img src="images/Listetest-plan-comptes.png" alt="Liste tests Comptes">
+                  <p class="small mt-2">Liste des cas de test (Xray / TO DO)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="capture-card">
+            <div class="capture-header">
+              <h5><i class="bi bi-play-circle me-2"></i>Exécution des tests</h5>
+            </div>
+
+            <div class="capture-body">
+              <span class="capture-tag">Xray</span>
+              <p><strong>Résultats des tests avec statuts PASS / FAIL.</strong></p>
+            </div>
+
+            <div class="capture-image-wrapper">
+              <div class="row g-3 w-100 capture-duo">
+                <div class="col-md-6 text-center">
+                  <img src="images/test-execution-paiements.png" alt="Exécution tests paiements">
+                  <p class="small mt-2">Lancement des tests dans Xray</p>
+                </div>
+
+                <div class="col-md-6 text-center">
+                  <img src="images/Satuttest-execution-paiements.png" alt="Résultat tests paiements">
+                  <p class="small mt-2">Résultats des tests : PASS / FAIL</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="capture-card">
+            <div class="capture-header">
+              <h5><i class="bi bi-bug me-2"></i>Bug critique</h5>
+            </div>
+
+            <div class="capture-body">
+              <span class="capture-tag">Anomalie</span>
+              <p><strong>Bug détecté avec étapes de reproduction et impact métier.</strong></p>
+            </div>
+
+            <div class="capture-image-wrapper">
+              <div class="row g-3 w-100 capture-duo">
+                <div class="col-md-6 text-center">
+                  <img src="images/bug-compte-solde-insuffisant.png" alt="Bug solde insuffisant">
+                  <p class="small mt-2">Bug détecté</p>
+                </div>
+
+                <div class="col-md-6 text-center">
+                  <img src="images/Suitebug-compte-solde-insuffisant.png" alt="Suite bug solde insuffisant">
+                  <p class="small mt-2">Détails / reproduction</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="capture-card">
+            <div class="capture-header">
+              <h5><i class="bi bi-file-earmark-text me-2"></i>User Story</h5>
+            </div>
+
+            <div class="capture-body">
+              <span class="capture-tag">Traçabilité</span>
+              <p><strong>User Story avec critères d’acceptation et lien vers les cas de test.</strong></p>
+            </div>
+
+            <div class="capture-image-wrapper text-center">
+              <img src="images/story-paiement-validite-montant.png" class="img-fluid rounded" alt="User Story paiement">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="capture-card">
+            <div class="capture-header">
+              <h5><i class="bi bi-list-check me-2"></i>Cas de test</h5>
+            </div>
+
+            <div class="capture-body">
+              <span class="capture-tag">Conception</span>
+              <p><strong>Cas de test détaillé avec étapes et résultat attendu.</strong></p>
+            </div>
+
+            <div class="capture-image-wrapper">
+              <img src="images/test-case-paiement-montant-vide.png" class="img-fluid rounded" alt="Cas de test">
+            </div>
+
+            <div class="capture-image-wrapper">
+              <div class="row g-3 w-100 capture-duo">
+                <div class="col-md-6 text-center">
+                  <img src="images/Suite-cas-de-tests-paiement.png" alt="Suite cas de test paiement">
+                  <p class="small mt-2">Étapes du test dans Xray</p>
+                </div>
+
+                <div class="col-md-6 text-center">
+                  <img src="images/Suitebis-cas-de-tests-paiement.png" alt="Suite bis cas de test paiement">
+                  <p class="small mt-2">Résultat attendu et validation</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <h4 class="fw-bold mb-3 code-title">
-      <i class="bi bi-file-earmark-code me-2"></i>Scénarios Gherkin : validation des règles métier
-    </h4>
+  <!-- AUTOMATION -->
+  <section id="automation">
+    <div class="container">
+      <p class="section-kicker">Automatisation</p>
 
-    <pre><code># language: fr
+      <h2 class="section-title automation-title">
+        <i class="bi bi-cpu me-2"></i>Tests automatisés — Selenium, Python & Behave
+      </h2>
+
+      <p class="section-subtitle">
+        Automatisation de scénarios critiques avec une approche BDD.
+        Les tests couvrent des cas limites sur ParaBank : création de compte avec solde insuffisant,
+        paiement avec solde insuffisant, montant négatif, montant vide et contrôle des messages d’erreur.
+      </p>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-3">
+          <div class="card card-custom text-center p-4">
+            <div class="icon-box mx-auto"><i class="bi bi-filetype-py"></i></div>
+            <h6 class="fw-bold">Python</h6>
+            <p class="small mb-0">Steps automatisés</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card card-custom text-center p-4">
+            <div class="icon-box mx-auto"><i class="bi bi-browser-chrome"></i></div>
+            <h6 class="fw-bold">Selenium</h6>
+            <p class="small mb-0">Automatisation UI</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card card-custom text-center p-4">
+            <div class="icon-box mx-auto"><i class="bi bi-gear"></i></div>
+            <h6 class="fw-bold">Behave</h6>
+            <p class="small mb-0">Exécution BDD</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card card-custom text-center p-4">
+            <div class="icon-box mx-auto"><i class="bi bi-list-check"></i></div>
+            <h6 class="fw-bold">Gherkin</h6>
+            <p class="small mb-0">Scénarios lisibles</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-custom highlight-card p-4 mb-5">
+        <h4 class="fw-bold mb-3 automation-subtitle-strong">
+          <i class="bi bi-bullseye me-2"></i>Objectif de l’automatisation
+        </h4>
+        <p class="mb-0">
+          L’objectif est de transformer des scénarios métier en tests automatisés rejouables.
+          Les fichiers <strong>.feature</strong> décrivent le comportement attendu en langage naturel,
+          puis les steps Python exécutent les actions dans l’interface ParaBank avec Selenium.
+        </p>
+      </div>
+
+      <h4 class="fw-bold mb-3 code-title">
+        <i class="bi bi-file-earmark-code me-2"></i>Scénarios Gherkin : validation des règles métier
+      </h4>
+
+      <pre><code># language: fr
 Fonctionnalité: Tests avancés ParaBank - Cas limites et erreurs
 
   Scénario: TC-CPT-10 - Refus de création de compte si solde source &lt; 100$
@@ -1248,24 +645,24 @@ Fonctionnalité: Tests avancés ParaBank - Cas limites et erreurs
     Alors un message d'erreur doit s'afficher indiquant "montant obligatoire"
     Et le paiement ne doit pas être confirmé</code></pre>
 
-    <p class="mt-3">
-      <strong>Apport du test :</strong> ces scénarios couvrent des cas limites et des tests négatifs,
-      afin d’identifier des anomalies critiques, de sécuriser les règles métier
-      et d’assurer la robustesse et la non-régression des fonctionnalités sensibles.
-    </p>
+      <p class="mt-3">
+        <strong>Couverture de test :</strong> ces scénarios couvrent des cas limites et des tests négatifs,
+        afin d’identifier des anomalies critiques, de sécuriser les règles métier
+        et d’assurer la robustesse et la non-régression des fonctionnalités sensibles.
+      </p>
 
-    <h4 class="fw-bold mt-5 mb-3 code-title">
-      <i class="bi bi-code-slash me-2"></i>Extrait de steps Python avec Behave et Selenium
-    </h4>
+      <h4 class="fw-bold mt-5 mb-3 code-title">
+        <i class="bi bi-code-slash me-2"></i>Extrait de steps Python avec Behave et Selenium
+      </h4>
 
-    <p>
-      <strong>Extrait représentatif :</strong> le fichier complet contient plusieurs steps.
-      Cette sélection montre les validations principales : sélection d’un compte,
-      remplissage dynamique via tableau Gherkin, contrôle des messages d’erreur
-      et vérification de non-confirmation.
-    </p>
+      <p>
+        <strong>Extrait représentatif :</strong> le fichier complet contient plusieurs steps.
+        Cette sélection montre les validations principales : sélection d’un compte,
+        remplissage dynamique via tableau Gherkin, contrôle des messages d’erreur
+        et vérification de non-confirmation.
+      </p>
 
-    <pre><code># features/steps/cas_de_test_avances_steps.py
+      <pre><code># features/steps/cas_de_test_avances_steps.py
 
 from behave import when, then
 from selenium.webdriver.support.ui import Select
@@ -1375,21 +772,38 @@ def step_verify_payment_not_confirmed(context):
 
     print("✅ Le paiement n'a pas été confirmé")</code></pre>
 
-    <div class="card card-custom highlight-card p-4 mt-5">
-      <h4 class="fw-bold mb-3 automation-subtitle-strong">
-        <i class="bi bi-check-circle me-2"></i>Apport QA
-      </h4>
-      <ul class="mb-0">
-        <li>Automatisation de scénarios critiques et cas limites.</li>
-        <li>Utilisation de tableaux Gherkin pour varier les jeux de données.</li>
-        <li>Vérification des messages d’erreur et des résultats attendus.</li>
-        <li>Contrôle de non-régression sur les parcours sensibles.</li>
-      </ul>
+  <div class="card card-custom p-4 mt-4">
+  <p class="fw-bold automation-link-title mb-2">
+    <i class="bi bi-github me-2"></i>Code complet du projet
+  </p>
+
+  <p class="mb-3">
+    Accès au repository GitHub contenant les scénarios Gherkin,
+    les steps Python et l’implémentation Selenium.
+  </p>
+
+  <a href="https://github.com/Abdou692/parabank-qa-automation"
+     target="_blank"
+     class="btn btn-main">
+    <i class="bi bi-code-slash me-2"></i>Voir le projet d’automatisation
+  </a>
+</div>
+
+
+
+      <div class="card card-custom highlight-card p-4 mt-5">
+        <h4 class="fw-bold mb-3 automation-subtitle-strong">
+          <i class="bi bi-check-circle me-2"></i>Apport QA
+        </h4>
+        <ul class="mb-0">
+          <li>Automatisation de scénarios critiques et cas limites.</li>
+          <li>Utilisation de tableaux Gherkin pour varier les jeux de données.</li>
+          <li>Vérification des messages d’erreur et des résultats attendus.</li>
+          <li>Contrôle de non-régression sur les parcours sensibles.</li>
+        </ul>
+      </div>
     </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- OUTILS -->
   <section id="outils">
@@ -1402,27 +816,22 @@ def step_verify_payment_not_confirmed(context):
       </p>
 
       <h5 class="mt-4 fw-bold">Gestion de tests</h5>
-<span class="badge-tech">Jira</span>
-<span class="badge-tech">Xray</span>
+      <span class="badge-tech">Jira</span>
+      <span class="badge-tech">Xray</span>
 
-<h5 class="mt-4 fw-bold">Automatisation</h5>
-<span class="badge-tech">Selenium WebDriver</span>
-<span class="badge-tech">Python</span>
-<span class="badge-tech">Behave</span>
-<span class="badge-tech">Gherkin</span>
+      <h5 class="mt-4 fw-bold">Automatisation</h5>
+      <span class="badge-tech">Selenium WebDriver</span>
+      <span class="badge-tech">Python</span>
+      <span class="badge-tech">Behave</span>
+      <span class="badge-tech">Gherkin</span>
 
-<h5 class="mt-4 fw-bold">Versioning & outils</h5>
-<span class="badge-tech">Git</span>
-<span class="badge-tech">GitHub</span>
-<span class="badge-tech">VS Code</span>
-<span class="badge-tech">Chrome DevTools</span>
-
-
-
+      <h5 class="mt-4 fw-bold">Versioning & outils</h5>
+      <span class="badge-tech">Git</span>
+      <span class="badge-tech">GitHub</span>
+      <span class="badge-tech">VS Code</span>
+      <span class="badge-tech">Chrome DevTools</span>
     </div>
   </section>
-
-  
 
   <!-- CONTACT -->
   <footer id="contact" class="footer">
@@ -1436,6 +845,7 @@ def step_verify_payment_not_confirmed(context):
           </p>
           <p>Jira • Xray • Selenium • Python • Behave • GitHub</p>
         </div>
+
         <div class="col-lg-5 text-lg-end">
           <p><strong>Nom :</strong> Abdou BA</p>
           <p><strong>GitHub :</strong> <a href="https://github.com/Abdou692" target="_blank">github.com/Abdou692</a></p>
@@ -1448,40 +858,7 @@ def step_verify_payment_not_confirmed(context):
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script>
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const testRows = document.querySelectorAll(".test-row");
-
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        filterButtons.forEach((btn) => btn.classList.remove("active"));
-        button.classList.add("active");
-
-        const filter = button.getAttribute("data-filter");
-
-        testRows.forEach((row) => {
-          const category = row.getAttribute("data-category");
-
-          if (filter === "all" || filter === category) {
-            row.style.display = "";
-          } else {
-            row.style.display = "none";
-          }
-        });
-      });
-    });
-
-    const navLinks = document.querySelectorAll(".nav-link");
-    const navbarCollapse = document.querySelector(".navbar-collapse");
-
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        if (navbarCollapse.classList.contains("show")) {
-          const collapse = new bootstrap.Collapse(navbarCollapse);
-          collapse.hide();
-        }
-      });
-    });
-  </script>
+  <!-- JS personnalisé -->
+  <script src="script.js"></script>
 </body>
 </html>
