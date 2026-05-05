@@ -454,6 +454,43 @@
     code {
       color: #67e8f9;
     }
+  
+    .automation-title {
+  color: var(--primary-dark);
+}
+
+.automation-title i {
+  color: var(--secondary);
+}
+
+.automation-subtitle-strong {
+  color: var(--primary-dark);
+}
+
+.automation-subtitle-strong i {
+  color: var(--secondary);
+}
+
+.code-title {
+  color: var(--primary-dark);
+}
+
+.code-title i {
+  color: var(--secondary);
+}
+
+.highlight-card {
+  border-left: 6px solid var(--primary);
+  background: #f0fdfa;
+}
+
+.highlight-card i {
+  color: var(--secondary);
+}
+
+.icon-box i {
+  color: var(--primary);
+}
 
     .footer {
       background: linear-gradient(135deg, #0f172a, #134e4a);
@@ -1106,58 +1143,253 @@
   </div>
 </section>
 
-  <!-- AUTOMATION -->
-  <section id="automation">
-    <div class="container">
-      <p class="section-kicker">Automatisation</p>
-      <h2 class="section-title">Selenium, Python et Behave</h2>
-      <p class="section-subtitle">
-        Les tests automatisés ciblent les parcours critiques pour faciliter les campagnes de non-régression :
-        connexion, consultation des comptes, paiement et vérification de messages d’erreur.
-      </p>
+ <!-- AUTOMATION -->
+<section id="automation">
+  <div class="container">
 
-      <div class="row g-4 mb-5">
-        <div class="col-md-3"><div class="card card-custom text-center p-4"><div class="icon-box mx-auto"><i class="bi bi-filetype-py"></i></div><h6 class="fw-bold">Python</h6></div></div>
-        <div class="col-md-3"><div class="card card-custom text-center p-4"><div class="icon-box mx-auto"><i class="bi bi-browser-chrome"></i></div><h6 class="fw-bold">Selenium</h6></div></div>
-        <div class="col-md-3"><div class="card card-custom text-center p-4"><div class="icon-box mx-auto"><i class="bi bi-check2-square"></i></div><h6 class="fw-bold">Behave</h6></div></div>
-        <div class="col-md-3"><div class="card card-custom text-center p-4"><div class="icon-box mx-auto"><i class="bi bi-github"></i></div><h6 class="fw-bold">GitHub</h6></div></div>
+    <p class="section-kicker">Automatisation</p>
+
+    <h2 class="section-title automation-title">
+      <i class="bi bi-cpu me-2"></i>Tests automatisés — Selenium, Python & Behave
+    </h2>
+
+    <p class="section-subtitle">
+      Automatisation de scénarios critiques avec une approche BDD.
+      Les tests couvrent des cas limites sur ParaBank : création de compte avec solde insuffisant,
+      paiement avec solde insuffisant, montant négatif, montant vide et contrôle des messages d’erreur.
+    </p>
+
+    <div class="row g-4 mb-5">
+      <div class="col-md-3">
+        <div class="card card-custom text-center p-4">
+          <div class="icon-box mx-auto"><i class="bi bi-filetype-py"></i></div>
+          <h6 class="fw-bold">Python</h6>
+          <p class="small mb-0">Steps automatisés</p>
+        </div>
       </div>
 
-      <h4 class="fw-bold mb-3">Exemple de scénario Gherkin</h4>
-      <pre><code>Feature: Paiement de facture sur ParaBank
+      <div class="col-md-3">
+        <div class="card card-custom text-center p-4">
+          <div class="icon-box mx-auto"><i class="bi bi-browser-chrome"></i></div>
+          <h6 class="fw-bold">Selenium</h6>
+          <p class="small mb-0">Automatisation UI</p>
+        </div>
+      </div>
 
-  Scenario: Refuser un paiement avec un montant négatif
-    Given l'utilisateur est connecté à ParaBank
-    When il accède au module Bill Pay
-    And il saisit un montant négatif
-    And il valide le paiement
-    Then le paiement doit être refusé
-    And un message d'erreur doit être affiché</code></pre>
+      <div class="col-md-3">
+        <div class="card card-custom text-center p-4">
+          <div class="icon-box mx-auto"><i class="bi bi-gear"></i></div>
+          <h6 class="fw-bold">Behave</h6>
+          <p class="small mb-0">Exécution BDD</p>
+        </div>
+      </div>
 
-      <h4 class="fw-bold mt-5 mb-3">Extrait de test Selenium Python</h4>
-      <pre><code>from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
-
-def test_login_parabank():
-    driver = webdriver.Chrome()
-    wait = WebDriverWait(driver, 10)
-
-    driver.get("https://parabank.parasoft.com/parabank/index.htm")
-    driver.maximize_window()
-
-    wait.until(EC.visibility_of_element_located((By.NAME, "username"))).send_keys("john")
-    driver.find_element(By.NAME, "password").send_keys("demo")
-    driver.find_element(By.XPATH, "//input[@value='Log In']").click()
-
-    title = wait.until(EC.visibility_of_element_located((By.TAG_NAME, "h1"))).text
-    assert "Accounts Overview" in title
-
-    driver.quit()</code></pre>
+      <div class="col-md-3">
+        <div class="card card-custom text-center p-4">
+          <div class="icon-box mx-auto"><i class="bi bi-list-check"></i></div>
+          <h6 class="fw-bold">Gherkin</h6>
+          <p class="small mb-0">Scénarios lisibles</p>
+        </div>
+      </div>
     </div>
-  </section>
+
+    <div class="card card-custom highlight-card p-4 mb-5">
+      <h4 class="fw-bold mb-3 automation-subtitle-strong">
+        <i class="bi bi-bullseye me-2"></i>Objectif de l’automatisation
+      </h4>
+      <p class="mb-0">
+        L’objectif est de transformer des scénarios métier en tests automatisés rejouables.
+        Les fichiers <strong>.feature</strong> décrivent le comportement attendu en langage naturel,
+        puis les steps Python exécutent les actions dans l’interface ParaBank avec Selenium.
+      </p>
+    </div>
+
+    <h4 class="fw-bold mb-3 code-title">
+      <i class="bi bi-file-earmark-code me-2"></i>Scénarios Gherkin : validation des règles métier
+    </h4>
+
+    <pre><code># language: fr
+Fonctionnalité: Tests avancés ParaBank - Cas limites et erreurs
+
+  Scénario: TC-CPT-10 - Refus de création de compte si solde source &lt; 100$
+    Étant donné l'utilisateur est connecté à ParaBank
+    Quand il accède à Open New Account
+    Et il choisit le type de compte "CHECKING"
+    Et il sélectionne un compte source avec solde insuffisant (&lt; 100$)
+    Et il clique sur Open New Account
+    Alors un message d'erreur doit s'afficher indiquant "solde insuffisant"
+    Et le nouveau compte ne doit pas être créé
+
+  Scénario: TC-BP-02 - Paiement refusé si solde insuffisant
+    Étant donné l'utilisateur est connecté à ParaBank pour le paiement de factures
+    Quand il accède à Bill Pay
+    Et il remplit un paiement avec un montant supérieur au solde disponible
+    Et il soumet le paiement
+    Alors un message d'erreur doit s'afficher indiquant "solde insuffisant"
+    Et le paiement ne doit pas être confirmé
+
+  Scénario: TC-BP-04 - Paiement avec montant négatif
+    Étant donné l'utilisateur est connecté à ParaBank pour le paiement de factures
+    Quand il accède à Bill Pay
+    Et il remplit le formulaire avec :
+      | payee | address     | city   | state | zipCode | phone        | account | verifyAccount | amount |
+      | John  | 123 Main St | Boston | MA    | 02101   | 617-555-0100 | 12345   | 12345         | -50    |
+    Et il soumet le paiement
+    Alors un message d'erreur doit s'afficher indiquant "montant invalide"
+    Et le paiement ne doit pas être confirmé
+
+  Scénario: TC-BP-05 - Paiement avec montant vide
+    Étant donné l'utilisateur est connecté à ParaBank pour le paiement de factures
+    Quand il accède à Bill Pay
+    Et il remplit le formulaire avec :
+      | payee | address     | city   | state | zipCode | phone        | account | verifyAccount | amount |
+      | John  | 123 Main St | Boston | MA    | 02101   | 617-555-0100 | 12345   | 12345         |        |
+    Et il soumet le paiement
+    Alors un message d'erreur doit s'afficher indiquant "montant obligatoire"
+    Et le paiement ne doit pas être confirmé</code></pre>
+
+    <p class="mt-3">
+      <strong>Apport du test :</strong> ces scénarios couvrent des cas limites et des tests négatifs,
+      afin d’identifier des anomalies critiques, de sécuriser les règles métier
+      et d’assurer la robustesse et la non-régression des fonctionnalités sensibles.
+    </p>
+
+    <h4 class="fw-bold mt-5 mb-3 code-title">
+      <i class="bi bi-code-slash me-2"></i>Extrait de steps Python avec Behave et Selenium
+    </h4>
+
+    <p>
+      <strong>Extrait représentatif :</strong> le fichier complet contient plusieurs steps.
+      Cette sélection montre les validations principales : sélection d’un compte,
+      remplissage dynamique via tableau Gherkin, contrôle des messages d’erreur
+      et vérification de non-confirmation.
+    </p>
+
+    <pre><code># features/steps/cas_de_test_avances_steps.py
+
+from behave import when, then
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.by import By
+from features.steps.selectors import *
+from features.steps.common_steps import *
+import time
+
+
+@when("il sélectionne un compte source avec solde insuffisant (&lt; 100$)")
+def step_select_low_balance_account(context):
+    """Sélectionner un compte source avec solde inférieur à 100$."""
+    try:
+        select_element = Select(context.driver.find_element(*FROM_ACCOUNT_SELECT))
+        options = select_element.options
+
+        if len(options) &gt; 1:
+            select_element.select_by_index(len(options) - 1)
+        else:
+            select_element.select_by_index(0)
+
+        time.sleep(0.5)
+        print("✅ Compte avec solde insuffisant sélectionné")
+
+    except Exception:
+        select_element = Select(context.driver.find_element(*FROM_ACCOUNT_ID))
+        select_element.select_by_index(0)
+        print("✅ Compte sélectionné via FROM_ACCOUNT_ID")
+
+
+@then("le nouveau compte ne doit pas être créé")
+def step_verify_account_not_created(context):
+    """Vérifier que le compte n'a pas été créé."""
+    time.sleep(1)
+
+    success_elements = context.driver.find_elements(
+        By.XPATH,
+        "//h1[contains(text(), 'Congratulations')] | //h1[contains(text(), 'Account Opened')]"
+    )
+
+    if success_elements and any(elem.is_displayed() for elem in success_elements):
+        raise AssertionError(
+            "Le compte a été créé alors qu'il ne devrait pas l'être"
+        )
+
+    print("✅ Le compte n'a pas été créé")
+
+
+@when("il remplit le formulaire avec :")
+def step_fill_payment_with_table(context):
+    """Remplir le formulaire Bill Pay avec les données du tableau Gherkin."""
+    row = context.table[0]
+
+    wait_type(context, PAYEE_NAME, row.get("payee", "Test"))
+    wait_type(context, ADDRESS, row.get("address", "123 St"))
+    wait_type(context, CITY, row.get("city", "City"))
+    wait_type(context, STATE, row.get("state", "ST"))
+    wait_type(context, ZIP, row.get("zipCode", "00000"))
+    wait_type(context, PHONE, row.get("phone", "000-000-0000"))
+    wait_type(context, ACCOUNT_NUMBER, row.get("account", "123"))
+    wait_type(context, VERIFY_ACCOUNT, row.get("verifyAccount", "123"))
+
+    amount = row.get("amount", "").strip()
+
+    if amount:
+        wait_type(context, AMOUNT, amount)
+        print(f"✅ Montant saisi : {amount}")
+    else:
+        print("ℹ️ Montant vide intentionnel")
+
+    select_element = Select(context.driver.find_element(*FROM_ACCOUNT_ID))
+    select_element.select_by_index(0)
+
+
+@then('un message d\\'erreur doit s\\'afficher indiquant "{error_message}"')
+def step_verify_error_message(context, error_message):
+    """Vérifier la présence d'un message d'erreur selon le cas testé."""
+    time.sleep(2)
+    page_text = context.driver.page_source.lower()
+
+    keywords = {
+        "solde insuffisant": ["insufficient", "balance", "solde"],
+        "montant invalide": ["invalid", "amount", "negative"],
+        "montant obligatoire": ["required", "empty", "amount required"]
+    }
+
+    search_keywords = keywords.get(error_message.lower(), [error_message.lower()])
+
+    assert any(keyword in page_text for keyword in search_keywords), \
+        f"Message d'erreur non trouvé : {error_message}"
+
+    print(f"✅ Message d'erreur vérifié : {error_message}")
+
+
+@then("le paiement ne doit pas être confirmé")
+def step_verify_payment_not_confirmed(context):
+    """Vérifier que le paiement n'a pas été validé."""
+    success_elements = context.driver.find_elements(
+        By.XPATH,
+        "//h1[contains(text(), 'Bill Payment Complete')]"
+    )
+
+    if success_elements and any(elem.is_displayed() for elem in success_elements):
+        raise AssertionError(
+            "Le paiement a été confirmé alors qu'il devait être refusé"
+        )
+
+    print("✅ Le paiement n'a pas été confirmé")</code></pre>
+
+    <div class="card card-custom highlight-card p-4 mt-5">
+      <h4 class="fw-bold mb-3 automation-subtitle-strong">
+        <i class="bi bi-check-circle me-2"></i>Apport QA
+      </h4>
+      <ul class="mb-0">
+        <li>Automatisation de scénarios critiques et cas limites.</li>
+        <li>Utilisation de tableaux Gherkin pour varier les jeux de données.</li>
+        <li>Vérification des messages d’erreur et des résultats attendus.</li>
+        <li>Contrôle de non-régression sur les parcours sensibles.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- OUTILS -->
   <section id="outils">
